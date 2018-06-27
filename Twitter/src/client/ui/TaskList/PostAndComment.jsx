@@ -88,7 +88,7 @@ export class PostAndComment extends PureComponent {
 
 export default connect((state, props) => {
         return ({
-            isWatchingMode: state.posts.isWatchingMode,
+            isWatchingMode: state.watchMode.isWatchingMode,
             tempLogin: state.posts.tempLogin.login,
             posts: state.posts.tempLogin && state.posts.users.find(user =>
                 user.login.login === props.match.params.login).posts

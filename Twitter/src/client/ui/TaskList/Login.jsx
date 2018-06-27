@@ -12,7 +12,9 @@ export class Login extends PureComponent {
             newItemAddUser: {login: ''},
         }
     }
-
+    componentDidMount(){
+        this.props.ChangeIsWatchingModeTrue();
+    }
     addUser() {
         this.props.ChangeIsWatchingModeFalse();
         this.props.AddUser(this.state.newItemAddUser);
@@ -69,7 +71,7 @@ export class Login extends PureComponent {
 
 export default connect(state => ({
         users: state.users,
-        isWatchingMode: state.posts.isWatchingMode
+        isWatchingMode: state.watchMode.isWatchingMode
     }),
     dispatch => ({
         AddUser: (login) => {

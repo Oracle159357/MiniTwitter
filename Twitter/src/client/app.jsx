@@ -51,7 +51,7 @@ export class App extends PureComponent {
 }
 
 export default connect(state => ({
-        isWatchingMode: state.posts.isWatchingMode
+        isWatchingMode: state.watchMode.isWatchingMode
     }),
     dispatch => ({})
 )(App);

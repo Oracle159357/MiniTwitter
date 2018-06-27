@@ -1,7 +1,6 @@
 const initialState = {
     users: [],
     tempLogin: "",
-    isWatchingMode: false
 
 };
 
@@ -13,20 +12,6 @@ export const posts = (state = initialState, action) => {
         return {
             ...state,
             users: [...state.users, {login: action.login, posts: []}]
-        }
-    }
-    if (action.type === 'CHANGE_ISWATCHINGMODETRUE') {
-        console.log(state.isWatchingMode)
-        return {
-            ...state,
-            isWatchingMode: true
-        }
-    }
-    if (action.type === 'CHANGE_ISWATCHINGMODEFALSE') {
-        console.log(state.isWatchingMode)
-        return {
-            ...state,
-            isWatchingMode: false
         }
     }
     if (action.type === 'ADD_POST') {
