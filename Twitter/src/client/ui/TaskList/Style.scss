@@ -1,0 +1,47 @@
+.task-list {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border: 3px solid green;
+}
+.login-button{
+  margin: 4px;
+}
+.task-buka {
+  background-color: lavenderblush;
+}
+.padding{
+  padding: 10%;
+}
+.margin{
+  margin: 4px;
+}
+.color-d{
+  color: black;
+}
+.delete-shadow{
+  cursor: pointer;
+
+  &:hover{
+    box-shadow: inset 0 0 1em white, 0 0 1em red;
+  }
+}
+
+@mixin status-generator($color){
+  .status-indicator-#{$color} {
+    color: $color;
+    cursor: pointer;
+    &:hover{
+      box-shadow: inset 0 0 1em white, 0 0 1em $color;
+    }
+  }
+}
+
+@include status-generator(red);
+@include status-generator(green);
+
+.task-list-container{
+  margin: 0 10px;
+}
+
