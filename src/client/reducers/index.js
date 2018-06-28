@@ -1,10 +1,7 @@
-import { combineReducers} from 'redux'
-//import { routerReducer } from 'react-router-redux';
-import {posts} from "./twitter";
-import {watchMode} from "./watchingMode";
+import { combineReducers } from 'redux';
+import { posts } from './twitter';
+import { watchMode } from './watchingMode';
 
 export default combineReducers({
-    //  routing: routerReducer,
-    posts, watchMode
-
+  posts, watchMode,
 });

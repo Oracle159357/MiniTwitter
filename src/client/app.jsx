@@ -2,10 +2,10 @@ import React, {PureComponent} from 'react';
 import {Router, Route, Link} from 'react-router-dom';
 import {Menu, Label} from 'semantic-ui-react'
 import './app.scss';
-import Login from "./ui/TaskList/Login";
-import Home from "./ui/TaskList/Home";
-import Users from "./ui/TaskList/Users";
-import PostAndComment from "./ui/TaskList/PostAndComment"
+import Login from "./components/Login";
+import Home from "./components/Home";
+import Users from "./components/Users";
+import PostAndComment from "./components/PostAndComment"
 import history from './history';
 import {connect} from "react-redux";
 
