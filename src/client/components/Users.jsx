@@ -5,10 +5,9 @@ import PropTypes from 'prop-types';
 import history from '../history';
 import './Style.scss';
 
-import { GetUsers } from '../selectors/GetDataFromStore';
+import { getUsers } from '../selectors/index';
 
-
-export class Users extends PureComponent {
+class Users extends PureComponent {
   UserMode = (login) => {
     history.push(`/user/${login}`);
   };
@@ -51,6 +50,6 @@ Users.propTypes = {
 export default connect(
   state => (
     {
-      users: GetUsers(state),
+      users: getUsers(state),
     }), undefined,
 )(Users);

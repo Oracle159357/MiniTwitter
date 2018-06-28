@@ -6,7 +6,7 @@ import { addUser, changeIsWatchingMode } from 'actions/login';
 import history from '../history';
 import './Style.scss';
 
-export class Login extends PureComponent {
+class Login extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

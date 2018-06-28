@@ -8,9 +8,9 @@ import {
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { addPost } from 'actions/home';
-import { GetCurrentLogin, GetPostUsers } from '../selectors/GetDataFromStore';
+import { getCurrentLogin, getPostUsers } from 'selectors';
 
-export class Home extends PureComponent {
+class Home extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -130,8 +130,8 @@ Home.propTypes = {
 export default connect(
   state => (
     {
-      currentLogin: GetCurrentLogin(state),
-      posts: GetPostUsers(state),
+      currentLogin: getCurrentLogin(state),
+      posts: getPostUsers(state),
     }),
   { addPost },
 )(Home);
