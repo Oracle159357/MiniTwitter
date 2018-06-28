@@ -1,8 +1,6 @@
 const initialState = {
   users: [],
   currentLogin: '',
-
-
 };
 
 export const posts = (state = initialState, action) => {
@@ -52,48 +50,3 @@ export const posts = (state = initialState, action) => {
       return state;
   }
 };
-
-// if (actions.type === 'ADD_USER') {
-//   if (state.users.findIndex(({ login }) => login === actions.payload) === -1) {
-//     return {
-//       ...state,
-//       currentLogin: actions.payload,
-//       users: [...state.users, { login: actions.payload, posts: [] }],
-//     };
-//   }
-//   return {
-//     ...state,
-//     currentLogin: actions.payload,
-//   };
-// }
-// if (actions.type === 'ADD_POST') {
-//   const index = state.users.findIndex(({ login }) => login === state.currentLogin);
-//   return {
-//     ...state,
-//     users: [...state.users.map((user, i) => i === index ? {
-//       login: user.login,
-//       posts: [...user.posts, {
-//         title: actions.payload.title,
-//         body: actions.payload.text,
-//         comments: [{ loginWhoLeft: '', textOfComment: '' }],
-//       }],
-//     } : user)],
-//   };
-// }
-// if (actions.type === 'ADD_COMMENT') {
-//   const index = state.users.findIndex(({ login }) => login.login === actions.payload.login);
-//   const index2 = state.users[index].posts.findIndex(({ title }) => title === actions.payload.title);
-//   return {
-//     ...state,
-//     users: [...state.users.map((user, i) => i === index ? {
-//       login: user.login,
-//       posts: [...user.posts.map((post, j) => j === index2 ? {
-//         title: post.title,
-//         body: post.body,
-//         comments: [...post.comments, actions.payload.comment],
-//       } : post)],
-//     } : user)],
-//   };
-// }
-
-// return state;

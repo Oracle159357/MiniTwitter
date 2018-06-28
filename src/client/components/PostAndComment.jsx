@@ -112,6 +112,7 @@ PostAndComment.propTypes = {
   addComment: PropTypes.func.isRequired,
   currentLogin: PropTypes.string.isRequired,
   isWatchingMode: PropTypes.bool.isRequired,
+  posts: PropTypes.element.isRequired,
 };
 
 export default connect(

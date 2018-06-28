@@ -83,11 +83,3 @@ Login.propTypes = {
 
 export default connect(undefined,
   { addUser, changeIsWatchingMode })(Login);
-
-// export default connect(undefined,
-//   dispatch => (
-//     {
-//       addUser: login => dispatch(addUser(login)),
-//       changeIsWatchingMode: isWatchMode => dispatch(changeIsWatchingMode(isWatchMode)),
-//       // changeIsWatchingModeFalse: () => dispatch({ type: 'CHANGE_ISWATCHINGMODEFALSE' }),
-//     }))(Login);

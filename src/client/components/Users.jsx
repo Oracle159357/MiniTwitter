@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Label } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 import history from '../history';
 import './Style.scss';
 
@@ -40,6 +41,10 @@ export class Users extends PureComponent {
     );
   }
 }
+
+Users.propTypes = {
+  users: PropTypes.element.isRequired,
+};
 
 export default connect(
   state => (
