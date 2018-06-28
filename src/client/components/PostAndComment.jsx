@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { Grid, Input, Label } from 'semantic-ui-react';
+import { Button, Grid, Input, Label } from 'semantic-ui-react';
 import { addComment } from 'actions/login';
 import PropTypes from 'prop-types';
 import { GetWatchingMode, GetPostUsersByComment, GetCurrentLogin } from '../selectors/GetDataFromStore';
@@ -56,7 +56,6 @@ export class PostAndComment extends PureComponent {
                         `Title: ${post.title}`
                       }
                     </h4>
-
                     <div>
                       {
                         `Body: ${post.body}`
@@ -86,12 +85,13 @@ export class PostAndComment extends PureComponent {
                     }
                     {this.props.isWatchingMode ? null
                       : (
-                        <div
+                        <Button
                           className="ui right floated button"
+                          disabled={!(this.state.commentInput)}
                           onClick={() => this.addComment(post.title)}
                         >
                           Add Comment
-                        </div>
+                        </Button>
                       )
                     }
                   </div>
@@ -112,7 +112,14 @@ PostAndComment.propTypes = {
   addComment: PropTypes.func.isRequired,
   currentLogin: PropTypes.string.isRequired,
   isWatchingMode: PropTypes.bool.isRequired,
-  posts: PropTypes.element.isRequired,
+  posts: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+    comments: PropTypes.arrayOf(PropTypes.shape({
+      loginWhoLeft: PropTypes.string.isRequired,
+      textOfComment: PropTypes.string.isRequired,
+    })),
+  })).isRequired,
 };
 
 export default connect(

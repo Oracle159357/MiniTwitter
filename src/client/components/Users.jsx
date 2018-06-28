@@ -43,7 +43,9 @@ export class Users extends PureComponent {
 }
 
 Users.propTypes = {
-  users: PropTypes.element.isRequired,
+  users: PropTypes.arrayOf(PropTypes.shape({
+    login: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default connect(

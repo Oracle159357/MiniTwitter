@@ -117,8 +117,16 @@ export class Home extends PureComponent {
 Home.propTypes = {
   addPost: PropTypes.func.isRequired,
   currentLogin: PropTypes.string.isRequired,
-  posts: PropTypes.element.isRequired,
+  posts: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+    comments: PropTypes.arrayOf(PropTypes.shape({
+      loginWhoLeft: PropTypes.string.isRequired,
+      textOfComment: PropTypes.string.isRequired,
+    })),
+  })).isRequired,
 };
+
 export default connect(
   state => (
     {
