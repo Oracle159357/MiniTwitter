@@ -61,7 +61,7 @@ class Login extends PureComponent {
                       Watch Mode
                     </Button>
                     <div className="or" />
-                    <Button positive fluid onClick={this.addUser}>
+                    <Button positive fluid onClick={this.addUser} disabled={!(this.state.loginInput)}>
                       Sign  In
                     </Button>
                   </div>
